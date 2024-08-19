@@ -94,7 +94,7 @@ public class FibNim {
                 } while(true);
 
                 calculateRemainingCoins(heaps, heap, coins);
-                
+                input.close();
 
                 if (heaps[0] == 0 && heaps[1] == 0 && heaps[2] == 0) {
                     System.out.println("Player " + (playersTurn + 1) + " Wins!");
@@ -128,17 +128,6 @@ public class FibNim {
         int convertNum = Math.abs(num);
         return arr[convertNum -1] = NUM_OF_COINS;
 
-    }
-
-    public static void output(int [] arr, String str) {
-
-        int num = Integer.parseInt(str);
-        if (num > 0 && num <= MAX_HEAP){
-            System.out.println("good");
-        } else if (num < 0 && num >= MIN_HEAP) {
-            resetArr(arr, num);
-            System.out.println("Remaining coins: " + arr[0] + ", " + arr[1] + ", " + arr[2]);
-        }
     }
 
 }
