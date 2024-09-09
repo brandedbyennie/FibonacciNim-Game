@@ -1,5 +1,6 @@
 package com.portfolio.fibonaccinim;
 
+// java GUI 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,6 +12,7 @@ public class FibNim {
     static int MIN_HEAP = -3;
 
     public static void main(String[] args) {
+
         Scanner input = new Scanner(System.in);
 
         int[] heaps = {NUM_OF_COINS, NUM_OF_COINS, NUM_OF_COINS};
@@ -33,7 +35,7 @@ public class FibNim {
                 do {
                     System.out.print("Player " + (playersTurn + 1) + " choose a heap: ");
                     chosenHeap = input.nextLine();
-                    if (!(isInteger(chosenHeap))) {
+                if (!(isInteger(chosenHeap))) {
                         System.out.println("Sorry you must enter an integer in the range -3 to 3, excluding zero.");
                         continue;
                     }
@@ -116,11 +118,11 @@ public class FibNim {
 
     public static boolean isHeapInvalid(int [] heaps, String chosenHeap) {
         int heap = Integer.parseInt(chosenHeap);
-        if (heap >= 1 && heap <= MAX_HEAP) {
+        if ((heap >= 1 && heap <= MAX_HEAP)) { 
             if (heaps[heap - 1] == 0) {
                 return true;
             }
-        } else if (heap < MIN_HEAP) {
+        } else if (heap < MIN_HEAP || heap == 0 || heap > MAX_HEAP) {
           heap = Math.abs(heap);
           return true; 
         }
@@ -130,8 +132,7 @@ public class FibNim {
             return true;
         } else {
             return false;
-        }*/
-        
+        }*/ 
         
     }
 
@@ -146,5 +147,4 @@ public class FibNim {
 
     }
 
-
-}
+} 
