@@ -46,17 +46,25 @@ public class FibNim {
                         continue;
 
                     } else {
+                        int convertNum = Math.abs(heap);
                         if (heap >= MIN_HEAP && heap <= -1) {
-                            if (usedReset.contains(playersTurn)) {
+                            if (heaps[convertNum -1] == NUM_OF_COINS) {
+                                System.out.println("Sorry Heap is still full.");
+                                continue;
+
+                            } else if (usedReset.contains(playersTurn)) {
                                 System.out.println("Sorry you have used your reset.");
                                 continue;
+
                             } else {
                                 resetToken(heaps, heap);
                                 usedReset.add(playersTurn);
                                 System.out.println("Reset Token Used");
                                 break;  
                             }
-                            
+                 
+                        } else {
+                            //System.out.println("Sorry, that's not a legal heap choice.");
                         }
                     }
 
